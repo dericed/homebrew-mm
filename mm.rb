@@ -4,6 +4,7 @@ class Mm < Formula
   url "https://github.com/mediamicroservices/mm/archive/mm_v2.4.2.tar.gz"
   sha256 "4bf27254fbe32fbe8fcd8cd175d1f999d069697abf2338ce453a7f7a0b971c06"
   head "https://github.com/mediamicroservices/mm.git"
+  revision 1
 
   depends_on "cowsay"
   if OS.mac?
