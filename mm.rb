@@ -17,7 +17,7 @@ class Mm < Formula
   depends_on "ffmpeg" => ["with-sdl2", "with-freetype"]
   depends_on "flac"
   depends_on "gnumeric"
-  depends_on "hashdeep"
+  depends_on "md5deep"
   depends_on "mediaconch"
   depends_on "media-info"
   depends_on "rsync"
@@ -85,12 +85,12 @@ class Mm < Formula
     system "updatingplist"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     If using the PREMIS DB reporting feature of mm, backup can be controlled via included plist file. Backup only needs to be activated/configured on the DB host computer. Included plist file will run daily backups at 2:00AM if activated.
     EOS
   end
 
-  def plist; <<-EOS.undent
+  def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
