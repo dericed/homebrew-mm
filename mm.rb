@@ -17,7 +17,7 @@ class Mm < Formula
   depends_on "ffmpeg" => ["with-sdl2", "with-freetype"]
   depends_on "flac"
   depends_on "gnumeric"
-  depends_on "hashdeep"
+  depends_on "md5deep"
   depends_on "mediaconch"
   depends_on "media-info"
   depends_on "rsync"
