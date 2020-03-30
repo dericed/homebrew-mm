@@ -13,14 +13,14 @@ class Mm < Formula
   end
   depends_on "dvdauthor"
   depends_on "exiftool"
-  depends_on "sdl"
-  depends_on "ffmpeg" => ["with-sdl2", "with-freetype"]
+  depends_on "ffmpeg"
   depends_on "flac"
   depends_on "gnumeric"
   depends_on "md5deep"
-  depends_on "mediaconch"
   depends_on "media-info"
+  depends_on "mediaconch"
   depends_on "rsync"
+  depends_on "sdl"
   depends_on "tnftp"
   depends_on "tree"
   depends_on "xmlstarlet"
@@ -91,8 +91,10 @@ class Mm < Formula
 
   def caveats; <<~EOS
     If using the PREMIS DB reporting feature of mm, backup can be controlled via included plist file. Backup only needs to be activated/configured on the DB host computer. Included plist file will run daily backups at 2:00AM if activated.
-    EOS
+  EOS
   end
+
+  plist_options :startup => true
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
@@ -120,6 +122,6 @@ class Mm < Formula
         <string>#{HOMEBREW_PREFIX}</string>
       </dict>
     </plist>
-    EOS
+  EOS
   end
 end
