@@ -3,8 +3,10 @@ class Mm < Formula
   homepage "https://github.com/mediamicroservices/mm"
   url "https://github.com/mediamicroservices/mm/archive/mm_v2.5.8.tar.gz"
   sha256 "9a7a9a1143bda79c19e4f927710119ecf54f576de1a2186209351277bbbd3305"
+  revision 1
   head "https://github.com/mediamicroservices/mm.git"
 
+  depends_on "amiaopensource/amiaos/gtkdialog"
   depends_on "cowsay"
   if OS.mac?
     depends_on "dvdrtools"
