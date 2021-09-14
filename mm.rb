@@ -4,7 +4,7 @@ class Mm < Formula
   url "https://github.com/mediamicroservices/mm/archive/mm_v2.6.tar.gz"
   sha256 "7d66d2d49404cd46cb10fcc6da370534fa19aa57dab58fa148eb0c07f5ddc01f"
   head "https://github.com/mediamicroservices/mm.git"
-  revision 1
+  revision 2
 
   depends_on "amiaopensource/amiaos/gtkdialog"
   depends_on "cowsay"
@@ -49,6 +49,7 @@ class Mm < Formula
     bin.install "makedvd_policies.xml"
     bin.install "makefingerprint"
     bin.install "makeflv"
+    bin.install "makeframemd5"
     bin.install "makeframes"
     bin.install "makegifsummary"
     bin.install "makelossless"
