@@ -96,34 +96,13 @@ class Mm < Formula
   EOS
   end
 
-  plist_options :startup => true
-
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>OnDemand</key>
-        <true/>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>StartCalendarInterval</key>
-        <dict>
-          <key>Hour</key>
-          <integer>02</integer>
-          <key>Minute</key>
-          <integer>00</integer>
-        </dict>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{bin}/dbbackup</string>
-        </array>
-        <key>WorkingDirectory</key>
-        <string>#{HOMEBREW_PREFIX}</string>
-      </dict>
-    </plist>
-  EOS
+  service do
+    run "#{bin}/dbbackup"
+    process_type :background
+    working_dir "#{HOMEBREW_PREFIX}"
+    environment_variables PATH: std_service_path_env
+    run_at_load true
+    run_type :cron
+    cron "0 2 * * *"
   end
 end
