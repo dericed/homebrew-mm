@@ -4,6 +4,7 @@ class Mm < Formula
   url "https://github.com/mediamicroservices/mm/archive/refs/tags/mm_v2.11.tar.gz"
   sha256 "7058df9f3a7209d7fc1243a9937bbba4496156656336919c3e515bad6b05cabc"
   head "https://github.com/mediamicroservices/mm.git"
+  revision 1
 
   depends_on "amiaopensource/amiaos/gtkdialog"
   depends_on "cowsay"
