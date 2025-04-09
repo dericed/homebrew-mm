@@ -4,6 +4,7 @@ class Mm < Formula
   url "https://github.com/mediamicroservices/mm/archive/refs/tags/mm_v2.17.tar.gz"
   sha256 "4e57edec9cc6ef75e86cfdb8f74af285602fcfccfd846c80b51047463a14dd16"
   head "https://github.com/mediamicroservices/mm.git"
+  revision 1
 
   depends_on "amiaopensource/amiaos/gtkdialog"
   depends_on "cowsay"
@@ -80,7 +81,6 @@ class Mm < Formula
     bin.install "removeDSStore"
     bin.install "restructureForCompliance"
     bin.install "rewrapmxf"
-    bin.install "searchfingerprint"
     bin.install "updatingplist"
     bin.install "uploadomneon"
     bin.install "verifypackage"
