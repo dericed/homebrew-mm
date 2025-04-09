@@ -4,7 +4,7 @@ class Mm < Formula
   url "https://github.com/mediamicroservices/mm/archive/refs/tags/mm_v2.17.tar.gz"
   sha256 "4e57edec9cc6ef75e86cfdb8f74af285602fcfccfd846c80b51047463a14dd16"
   head "https://github.com/mediamicroservices/mm.git"
-  revision 1
+  revision 2
 
   depends_on "amiaopensource/amiaos/gtkdialog"
   depends_on "cowsay"
@@ -81,29 +81,9 @@ class Mm < Formula
     bin.install "removeDSStore"
     bin.install "restructureForCompliance"
     bin.install "rewrapmxf"
-    bin.install "updatingplist"
     bin.install "uploadomneon"
     bin.install "verifypackage"
     bin.install "verifytree"
     bin.install "xdcamingest"
-  end
-
-  def post_install
-    system "updatingplist"
-  end
-
-  def caveats; <<~EOS
-    If using the PREMIS DB reporting feature of mm, backup can be controlled via included plist file. Backup only needs to be activated/configured on the DB host computer. Included plist file will run daily backups at 2:00AM if activated.
-  EOS
-  end
-
-  service do
-    run "#{bin}/dbbackup"
-    process_type :background
-    working_dir "#{HOMEBREW_PREFIX}"
-    environment_variables PATH: std_service_path_env
-    run_at_load true
-    run_type :cron
-    cron "0 2 * * *"
   end
 end
