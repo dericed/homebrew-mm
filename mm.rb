@@ -1,8 +1,8 @@
 class Mm < Formula
   desc "Media microservices for audiovisual archives"
   homepage "https://github.com/mediamicroservices/mm"
-  url "https://github.com/mediamicroservices/mm/archive/refs/tags/mm_v2.18.tar.gz"
-  sha256 "bc11e4e3219ce13246a32ee8912941379b6e2fd3f048b72376cf52dfe3fbdaf0"
+  url "https://github.com/mediamicroservices/mm/archive/refs/tags/mm_v2.19.tar.gz"
+  sha256 "e5870f0ae8f1eac96910d1cda2be8c0284b132e3771b144f6f9f483eb2270534"
   head "https://github.com/mediamicroservices/mm.git"
   revision 1
 
